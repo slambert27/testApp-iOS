@@ -11,14 +11,16 @@
 		ACE0BD9F22792B980078C081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE0BD9E22792B980078C081 /* Assets.xcassets */; };
 		ACE0BDAD22792B990078C081 /* ScorePageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDAC22792B990078C081 /* ScorePageAppTests.swift */; };
 		ACE0BDB822792B990078C081 /* ScorePageAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDB722792B990078C081 /* ScorePageAppUITests.swift */; };
-		ACE0BDC622792CB60078C081 /* ScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDC522792CB60078C081 /* ScoresView.swift */; };
 		ACE0BDC822792E690078C081 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDC722792E690078C081 /* ScoreCell.swift */; };
 		ACE0BDCA22792E840078C081 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDC922792E840078C081 /* Event.swift */; };
 		ACE0BDCC22792EB10078C081 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDCB22792EB10078C081 /* Team.swift */; };
 		ACE0BDCE227931B90078C081 /* BaseballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDCD227931B90078C081 /* BaseballEvent.swift */; };
-		ACE0BDD3227933020078C081 /* BaseballPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD2227933020078C081 /* BaseballPresenter.swift */; };
+		ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD2227933020078C081 /* EventPresenter.swift */; };
 		ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD4227935300078C081 /* BasketballEvent.swift */; };
 		ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD622793AA40078C081 /* ScoresViewController.swift */; };
+		B17E9BF72279F19F0004973D /* UILabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF62279F19F0004973D /* UILabelFactory.swift */; };
+		B17E9BF9227A0EF70004973D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF8227A0EF70004973D /* Constants.swift */; };
+		B17E9BFB227A16EC0004973D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFA227A16EC0004973D /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,14 +51,16 @@
 		ACE0BDB322792B990078C081 /* ScorePageAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScorePageAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE0BDB722792B990078C081 /* ScorePageAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePageAppUITests.swift; sourceTree = "<group>"; };
 		ACE0BDB922792B990078C081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACE0BDC522792CB60078C081 /* ScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresView.swift; sourceTree = "<group>"; };
 		ACE0BDC722792E690078C081 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		ACE0BDC922792E840078C081 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		ACE0BDCB22792EB10078C081 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		ACE0BDCD227931B90078C081 /* BaseballEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballEvent.swift; sourceTree = "<group>"; };
-		ACE0BDD2227933020078C081 /* BaseballPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballPresenter.swift; sourceTree = "<group>"; };
+		ACE0BDD2227933020078C081 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		ACE0BDD4227935300078C081 /* BasketballEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballEvent.swift; sourceTree = "<group>"; };
 		ACE0BDD622793AA40078C081 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		B17E9BF62279F19F0004973D /* UILabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFactory.swift; sourceTree = "<group>"; };
+		B17E9BF8227A0EF70004973D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B17E9BFA227A16EC0004973D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				ACE0BDD622793AA40078C081 /* ScoresViewController.swift */,
-				ACE0BDC522792CB60078C081 /* ScoresView.swift */,
 				ACE0BDC722792E690078C081 /* ScoreCell.swift */,
+				B17E9BF62279F19F0004973D /* UILabelFactory.swift */,
+				B17E9BFA227A16EC0004973D /* Constraints.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,7 +164,8 @@
 		ACE0BDD1227932DC0078C081 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				ACE0BDD2227933020078C081 /* BaseballPresenter.swift */,
+				B17E9BF8227A0EF70004973D /* Constants.swift */,
+				ACE0BDD2227933020078C081 /* EventPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -293,15 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACE0BDD3227933020078C081 /* BaseballPresenter.swift in Sources */,
+				ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */,
 				ACE0BDCE227931B90078C081 /* BaseballEvent.swift in Sources */,
 				ACE0BDCC22792EB10078C081 /* Team.swift in Sources */,
 				ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */,
+				B17E9BFB227A16EC0004973D /* Constraints.swift in Sources */,
 				ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */,
-				ACE0BDC622792CB60078C081 /* ScoresView.swift in Sources */,
+				B17E9BF9227A0EF70004973D /* Constants.swift in Sources */,
 				ACE0BDC822792E690078C081 /* ScoreCell.swift in Sources */,
 				ACE0BD9822792B960078C081 /* AppDelegate.swift in Sources */,
 				ACE0BDCA22792E840078C081 /* Event.swift in Sources */,
+				B17E9BF72279F19F0004973D /* UILabelFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

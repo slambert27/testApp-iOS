@@ -11,7 +11,7 @@ import Foundation
 enum EventState {
     case upcoming
     case live
-    case complete
+    case final
 }
 
 protocol Event {
@@ -22,7 +22,8 @@ protocol Event {
     var startTime: String? { get }
     var station: String? { get }
     
-    var favorite: String? { get }
+    var favorite: Team? { get }
+    var spread: Double? { get }
     var overUnder: Double? { get }
     
     var state: EventState { get }
@@ -31,6 +32,7 @@ protocol Event {
     var awayScore: Int? { get }
     
     var period: String? { get }
+    var gameTime: String? { get }
     
     func getTeams() -> (Team, Team)
 }

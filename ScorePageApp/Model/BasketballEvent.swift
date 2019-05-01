@@ -16,7 +16,8 @@ struct BasketballEvent: Event {
     var startTime: String?
     var station: String?
     
-    var favorite: String?
+    var favorite: Team?
+    var spread: Double?
     var overUnder: Double?
     
     var state: EventState
@@ -32,8 +33,20 @@ struct BasketballEvent: Event {
         awayTeam = away
         startTime = time
         station = "FOX"
-        favorite = home.abbreviation
+        favorite = home
+        spread = 1.0
         overUnder = 0.0
+        state = .upcoming
+    }
+    
+    init(home: Team, away: Team, time: String, station: String, favorite: Team, spread: Double, overUnder: Double) {
+        homeTeam = home
+        awayTeam = away
+        startTime = time
+        self.station = station
+        self.favorite = favorite
+        self.spread = spread
+        self.overUnder = overUnder
         state = .upcoming
     }
     
@@ -45,6 +58,7 @@ struct BasketballEvent: Event {
         self.awayScore = awayScore
         self.period = period
         self.gameTime = gameTime
+        station = "FOX"
     }
     
     func getTeams() -> (Team, Team) {
