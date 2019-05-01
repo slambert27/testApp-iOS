@@ -41,6 +41,5 @@ class Constants {
         BaseballEvent(home: teams[8], away: teams[9], time: "7:10 PM", station: "ESPN", favorite: teams[9], spread: 2.5, overUnder: 7.0),
         BaseballEvent(home: teams[10], away: teams[11], time: "7:10 PM", station: "MLB TV", favorite: teams[10], spread: 1.0, overUnder: 5.5),
         BaseballEvent(home: teams[12], away: teams[13], time: "10:10 PM", station: "FS1", favorite: teams[12], spread: 1.5, overUnder: 8.5),
-        BasketballEvent(home: teams[14], away: teams[15], time: "7:30 PM", station: "NBA TV", favorite: teams[15], spread: 8.5, overUnder: 210.5),
     ]
 }

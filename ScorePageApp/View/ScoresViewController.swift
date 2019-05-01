@@ -40,17 +40,23 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         return 1
     }
 
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return Constants.eventList.count
+        if Constants.eventList.count.isMultiple(of: 2) {
+            return Constants.eventList.count
+        } else {
+            return Constants.eventList.count + 1
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScoreCell
         cell.backgroundColor = .white
-        cell.injectData(event: Constants.eventList[indexPath.row])
-            
+        
+        if indexPath.row < Constants.eventList.count {
+            cell.injectData(event: Constants.eventList[indexPath.row])
+        }
+        
         return cell
     }
     

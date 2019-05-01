@@ -29,7 +29,6 @@ class ScoreCell: UICollectionViewCell {
     var homeLabel = UILabelFactory(size: 22).bold().compact().build()
     var awayLabel = UILabelFactory(size: 22).bold().compact().build()
     
-    
     //live and final
     var homeScoreLabel = UILabelFactory(size: 22).bold().compact().build()
     var awayScoreLabel = UILabelFactory(size: 22).bold().compact().build()
@@ -58,34 +57,49 @@ class ScoreCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        homeLogo.image = nil
+        awayLogo.image = nil
+        homeLabel.text = nil
+        awayLabel.text = nil
+        homeScoreLabel.text = nil
+        awayScoreLabel.text = nil
+        channelLabel.text = nil
+        liveChannelLabel.text = nil
+        timeLabel.text = nil
+        clockLabel.text = nil
+        favoriteLabel.text = nil
+        overUnderLabel.text = nil
+    }
+    
     func injectData(event: Event) {
         let presenter = EventPresenter(event: event)
-        let homeTeam = presenter.getHomeTeam()
+        let homeTeam = presenter.homeTeam
         homeLogo.image = homeTeam.0
         homeLabel.text = homeTeam.1
         
-        let awayTeam = presenter.getAwayTeam()
+        let awayTeam = presenter.awayTeam
         awayLogo.image = awayTeam.0
         awayLabel.text = awayTeam.1
         
         if event.state == .upcoming {
             
             setupUpcomingComponents()
-            timeLabel.text = presenter.getTime()
-            channelLabel.text = presenter.getStation()
+            timeLabel.text = presenter.time
+            channelLabel.text = presenter.station
             
-            favoriteLabel.text = presenter.getFavorite()
-            overUnderLabel.text = presenter.getOverUnder()
+            favoriteLabel.text = presenter.favorite
+            overUnderLabel.text = presenter.overUnder
             
         } else { //live or final
             
             setupLiveComponents()
-            let scores = presenter.getScores()
+            let scores = presenter.scores
             awayScoreLabel.text = scores.0
             homeScoreLabel.text = scores.1
             
-            clockLabel.text = presenter.getClock()
-            liveChannelLabel.text = presenter.getStation()
+            clockLabel.text = presenter.clock
+            liveChannelLabel.text = presenter.station
         }
     }
     

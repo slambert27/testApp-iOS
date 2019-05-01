@@ -15,15 +15,15 @@ struct EventPresenter {
         return event.state
     }
     
-    func getHomeTeam() -> (UIImage, String) {
+    var homeTeam: (UIImage, String) {
         return (event.homeTeam.logo, event.homeTeam.abbreviation)
     }
     
-    func getAwayTeam() -> (UIImage, String) {
+    var awayTeam: (UIImage, String) {
         return (event.awayTeam.logo, event.awayTeam.abbreviation)
     }
     
-    func getScores() -> (String, String) {
+    var scores: (String, String) {
         if let away = event.awayScore, let home = event.homeScore {
             return (String(away), String(home))
         } else {
@@ -31,21 +31,21 @@ struct EventPresenter {
         }
     }
     
-    func getClock() -> String {
+    var clock: String {
         let period = event.period ?? ""
         let time = event.gameTime ?? ""
         return period + " " + time
     }
     
-    func getStation() -> String {
+    var station: String {
         return event.station ?? ""
     }
     
-    func getTime() -> String {
+    var time: String {
         return event.startTime ?? ""
     }
     
-    func getFavorite() -> String {
+    var favorite: String {
         if let fav = event.favorite?.abbreviation, let spread = event.spread {
             return fav + " -" + String(spread)
         } else {
@@ -53,7 +53,7 @@ struct EventPresenter {
         }
     }
     
-    func getOverUnder() -> String {
+    var overUnder: String {
         if let oU = event.overUnder {
             return "O/U " + String(oU)
         } else {
