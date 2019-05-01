@@ -41,13 +41,19 @@ struct UILabelFactory {
     }
     
     func compact() -> UILabelFactory {
-        label.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: size)
+        label.font = UIFont(name: "DINCondensed-Bold", size: size)
         
         return self
     }
     
     func bold() -> UILabelFactory {
         label.font = .systemFont(ofSize: size, weight: .heavy)
+        return self
+    }
+    
+    func header(text: String) -> UILabelFactory {
+        label.text = text
+        label.backgroundColor = .white
         return self
     }
 }

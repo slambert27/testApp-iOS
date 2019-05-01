@@ -26,12 +26,12 @@ class ScoreCell: UICollectionViewCell {
         return image
     }()
     
-    var homeLabel = UILabelFactory(size: 22).bold().compact().build()
-    var awayLabel = UILabelFactory(size: 22).bold().compact().build()
+    var homeLabel = UILabelFactory(size: 26).compact().build()
+    var awayLabel = UILabelFactory(size: 26).compact().build()
     
     //live and final
-    var homeScoreLabel = UILabelFactory(size: 22).bold().compact().build()
-    var awayScoreLabel = UILabelFactory(size: 22).bold().compact().build()
+    var homeScoreLabel = UILabelFactory(size: 26).compact().build()
+    var awayScoreLabel = UILabelFactory(size: 26).compact().build()
     
     var liveChannelLabel = UILabelFactory(size: 12).bold().textColor(of: .red).build()
     
