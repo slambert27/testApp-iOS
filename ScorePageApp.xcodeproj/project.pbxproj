@@ -18,6 +18,7 @@
 		ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD2227933020078C081 /* EventPresenter.swift */; };
 		ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD4227935300078C081 /* BasketballEvent.swift */; };
 		ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD622793AA40078C081 /* ScoresViewController.swift */; };
+		ACE0BDDD227A63420078C081 /* steelfish.extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */; };
 		B17E9BF72279F19F0004973D /* UILabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF62279F19F0004973D /* UILabelFactory.swift */; };
 		B17E9BF9227A0EF70004973D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF8227A0EF70004973D /* Constants.swift */; };
 		B17E9BFB227A16EC0004973D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFA227A16EC0004973D /* Constraints.swift */; };
@@ -58,6 +59,7 @@
 		ACE0BDD2227933020078C081 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		ACE0BDD4227935300078C081 /* BasketballEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballEvent.swift; sourceTree = "<group>"; };
 		ACE0BDD622793AA40078C081 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
+		ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = steelfish.extrabold.ttf; sourceTree = "<group>"; };
 		B17E9BF62279F19F0004973D /* UILabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFactory.swift; sourceTree = "<group>"; };
 		B17E9BF8227A0EF70004973D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B17E9BFA227A16EC0004973D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				ACE0BDCF227931DC0078C081 /* Model */,
 				ACE0BD9E22792B980078C081 /* Assets.xcassets */,
 				ACE0BDA322792B980078C081 /* Info.plist */,
+				ACE0BDDB227A61C00078C081 /* Fonts */,
 			);
 			path = ScorePageApp;
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				ACE0BDD2227933020078C081 /* EventPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ACE0BDDB227A61C00078C081 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE0BD9F22792B980078C081 /* Assets.xcassets in Resources */,
+				ACE0BDDD227A63420078C081 /* steelfish.extrabold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

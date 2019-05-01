@@ -41,7 +41,7 @@ struct UILabelFactory {
     }
     
     func compact() -> UILabelFactory {
-        label.font = UIFont(name: "DINCondensed-Bold", size: size)
+        label.font = UIFont(name: "SteelfishEb-Regular", size: size)
         
         return self
     }

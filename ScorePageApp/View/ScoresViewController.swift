@@ -28,7 +28,7 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         return view
     }()
     
-    var header = UILabelFactory(size: 36).compact().header(text: "SCORES").build()
+    var header = UILabelFactory(size: 40).compact().header(text: "SCORES").build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
