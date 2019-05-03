@@ -33,8 +33,8 @@ struct EventPresenter {
     
     var clock: String {
         let period = event.period ?? ""
-        let time = event.gameTime ?? ""
-        return period + " " + time
+        let time = event.gameTime != nil ? " " + event.gameTime! : ""
+        return period + time
     }
     
     var station: String {

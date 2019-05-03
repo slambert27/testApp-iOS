@@ -37,7 +37,7 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         super.viewDidLoad()
 
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: topNav.frame.maxY, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.delegate = self
@@ -108,7 +108,7 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         
         day.constrainCenterY(to: dayNav.centerYAnchor).constrainLead(to: dayNav.leadingAnchor, at: 25)
         
-        bottomNav.constrainBottom(to: self.view.bottomAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 100)
+        bottomNav.constrainBottom(to: self.view.bottomAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor)
         
         collectionView.constrainTop(to: dayNav.bottomAnchor, at: 1).constrainBottom(to: bottomNav.topAnchor, at: -1).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor)
     }
