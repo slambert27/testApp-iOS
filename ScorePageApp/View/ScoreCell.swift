@@ -28,19 +28,19 @@ class ScoreCell: UICollectionViewCell {
         return image
     }()
     
-    var homeLabel = UILabelFactory(size: 30).compact().build()
-    var awayLabel = UILabelFactory(size: 30).compact().build()
+    var homeLabel = UILabelFactory(size: 30).compact().id("homeName").build()
+    var awayLabel = UILabelFactory(size: 30).compact().id("awayName").build()
     
     //live and final
-    var homeScoreLabel = UILabelFactory(size: 30).compact().align(.right).build()
-    var awayScoreLabel = UILabelFactory(size: 30).compact().align(.right).build()
+    var homeScoreLabel = UILabelFactory(size: 30).compact().align(.right).id("homeScore").build()
+    var awayScoreLabel = UILabelFactory(size: 30).compact().align(.right).id("awayScore").build()
     
     var liveChannelLabel = UILabelFactory(size: 12).bold().textColor(of: .red).build()
 
     var clockLabel = UILabelFactory(size: 12).build()
     
     //upcoming
-    var timeLabel = UILabelFactory(size: 12).build()
+    var timeLabel = UILabelFactory(size: 12).id("startTime").build()
     var channelLabel = UILabelFactory(size: 12).build()
     
     var favoriteLabel = UILabelFactory(size: 12).build()
@@ -89,6 +89,8 @@ class ScoreCell: UICollectionViewCell {
             favoriteLabel.text = presenter.favorite
             overUnderLabel.text = presenter.overUnder
             
+            accessibilityIdentifier = "upcomingCell"
+            
         } else { //live or final
             
             setupLiveComponents()
@@ -98,6 +100,8 @@ class ScoreCell: UICollectionViewCell {
             
             clockLabel.text = presenter.clock
             liveChannelLabel.text = presenter.station
+            
+            accessibilityIdentifier = "liveCell"
         }
     }
     

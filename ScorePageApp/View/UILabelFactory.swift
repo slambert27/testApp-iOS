@@ -60,4 +60,9 @@ struct UILabelFactory {
         label.textAlignment = alignment
         return self
     }
+    
+    func id(_ id: String) -> UILabelFactory {
+        label.accessibilityIdentifier = id
+        return self
+    }
 }

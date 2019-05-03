@@ -25,6 +25,7 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.accessibilityIdentifier = "dayNav"
         return view
     }()
     
@@ -39,9 +40,10 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.accessibilityIdentifier = "ScoresView"
         
         // Register cell classes
         collectionView.register(ScoreCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -49,12 +51,12 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.backgroundColor = UIColor.init(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1)
+        view.backgroundColor = UIColor.init(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1)
         
-        self.view.addSubview(collectionView)
-        self.view.addSubview(topNav)
-        self.view.addSubview(dayNav)
-        self.view.addSubview(bottomNav)
+        view.addSubview(collectionView)
+        view.addSubview(topNav)
+        view.addSubview(dayNav)
+        view.addSubview(bottomNav)
         
         topNav.addSubview(header)
         dayNav.addSubview(day)
@@ -100,16 +102,16 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
     }
     
     func setConstraints() {
-        topNav.constrainTop(to: self.view.topAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 100)
+        topNav.constrainTop(to: view.topAnchor).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor).constrainHeight(to: 100)
         
         header.constrainBottom(to: topNav.bottomAnchor, at: -10).constrainLead(to: topNav.leadingAnchor, at: 25)
         
-        dayNav.constrainTop(to: topNav.bottomAnchor, at: 1).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 36)
+        dayNav.constrainTop(to: topNav.bottomAnchor, at: 1).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor).constrainHeight(to: 36)
         
         day.constrainCenterY(to: dayNav.centerYAnchor).constrainLead(to: dayNav.leadingAnchor, at: 25)
         
-        bottomNav.constrainBottom(to: self.view.bottomAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor)
+        bottomNav.constrainBottom(to: view.bottomAnchor).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor)
         
-        collectionView.constrainTop(to: dayNav.bottomAnchor, at: 1).constrainBottom(to: bottomNav.topAnchor, at: -1).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor)
+        collectionView.constrainTop(to: dayNav.bottomAnchor, at: 1).constrainBottom(to: bottomNav.topAnchor, at: -1).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor)
     }
 }

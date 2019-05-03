@@ -23,6 +23,7 @@
 		B17E9BF9227A0EF70004973D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF8227A0EF70004973D /* Constants.swift */; };
 		B17E9BFD227B33ED0004973D /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFC227B33ED0004973D /* NavBarView.swift */; };
 		B17E9BFF227B49E00004973D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFE227B49E00004973D /* UIExtensions.swift */; };
+		B1A974C8227CD94400C1F9D5 /* XCUIExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A974C7227CD94400C1F9D5 /* XCUIExtenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B17E9BF8227A0EF70004973D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B17E9BFC227B33ED0004973D /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		B17E9BFE227B49E00004973D /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		B1A974C7227CD94400C1F9D5 /* XCUIExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIExtenstions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE0BDB722792B990078C081 /* ScorePageAppUITests.swift */,
+				B1A974C7227CD94400C1F9D5 /* XCUIExtenstions.swift */,
 				ACE0BDB922792B990078C081 /* Info.plist */,
 			);
 			path = ScorePageAppUITests;
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE0BDB822792B990078C081 /* ScorePageAppUITests.swift in Sources */,
+				B1A974C8227CD94400C1F9D5 /* XCUIExtenstions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
