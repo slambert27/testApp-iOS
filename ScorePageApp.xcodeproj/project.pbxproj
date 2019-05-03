@@ -21,7 +21,8 @@
 		ACE0BDDD227A63420078C081 /* steelfish.extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */; };
 		B17E9BF72279F19F0004973D /* UILabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF62279F19F0004973D /* UILabelFactory.swift */; };
 		B17E9BF9227A0EF70004973D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BF8227A0EF70004973D /* Constants.swift */; };
-		B17E9BFB227A16EC0004973D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFA227A16EC0004973D /* Constraints.swift */; };
+		B17E9BFD227B33ED0004973D /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFC227B33ED0004973D /* NavBarView.swift */; };
+		B17E9BFF227B49E00004973D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFE227B49E00004973D /* UIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,8 @@
 		ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = steelfish.extrabold.ttf; sourceTree = "<group>"; };
 		B17E9BF62279F19F0004973D /* UILabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFactory.swift; sourceTree = "<group>"; };
 		B17E9BF8227A0EF70004973D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B17E9BFA227A16EC0004973D /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		B17E9BFC227B33ED0004973D /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		B17E9BFE227B49E00004973D /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				ACE0BDD622793AA40078C081 /* ScoresViewController.swift */,
+				B17E9BFC227B33ED0004973D /* NavBarView.swift */,
 				ACE0BDC722792E690078C081 /* ScoreCell.swift */,
 				B17E9BF62279F19F0004973D /* UILabelFactory.swift */,
-				B17E9BFA227A16EC0004973D /* Constraints.swift */,
+				B17E9BFE227B49E00004973D /* UIExtensions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,9 +316,10 @@
 			files = (
 				ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */,
 				ACE0BDCE227931B90078C081 /* BaseballEvent.swift in Sources */,
+				B17E9BFF227B49E00004973D /* UIExtensions.swift in Sources */,
 				ACE0BDCC22792EB10078C081 /* Team.swift in Sources */,
 				ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */,
-				B17E9BFB227A16EC0004973D /* Constraints.swift in Sources */,
+				B17E9BFD227B33ED0004973D /* NavBarView.swift in Sources */,
 				ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */,
 				B17E9BF9227A0EF70004973D /* Constants.swift in Sources */,
 				ACE0BDC822792E690078C081 /* ScoreCell.swift in Sources */,

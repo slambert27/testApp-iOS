@@ -21,21 +21,21 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         return view
     }()
     
-    var bottomNav: UIView = {
+    var dayNav: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    var header = UILabelFactory(size: 40).compact().header(text: "SCORES").build()
+    var bottomNav = NavBarView()
+    
+    var header = UILabelFactory(size: 40).compact().text("SCORES").build()
+    var day = UILabelFactory(size: 12).text("Today").build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: topNav.frame.maxY, left: 0, bottom: 0, right: 0)
         
@@ -48,23 +48,25 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
 
         // Do any additional setup after loading the view.
         collectionView.backgroundColor = .clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.backgroundColor = UIColor.init(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1)
         
         self.view.addSubview(collectionView)
         self.view.addSubview(topNav)
-        topNav.addSubview(header)
+        self.view.addSubview(dayNav)
         self.view.addSubview(bottomNav)
+        
+        topNav.addSubview(header)
+        dayNav.addSubview(day)
         
         setConstraints()
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         if Constants.eventList.count.isMultiple(of: 2) {
             return Constants.eventList.count
         } else {
@@ -87,7 +89,7 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let padding: CGFloat =  1
         let collectionViewSize = collectionView.frame.size.width - padding
         
-        return CGSize(width: collectionViewSize/2, height: 200)
+        return CGSize(width: collectionViewSize/2, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -98,23 +100,16 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
     }
     
     func setConstraints() {
-        topNav.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        topNav.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        topNav.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        topNav.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        topNav.constrainTop(to: self.view.topAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 100)
         
-        header.bottomAnchor.constraint(equalTo: topNav.bottomAnchor, constant: -10).isActive = true
-        header.leadingAnchor.constraint(equalTo: topNav.leadingAnchor, constant: 20).isActive = true
+        header.constrainBottom(to: topNav.bottomAnchor, at: -10).constrainLead(to: topNav.leadingAnchor, at: 25)
         
-        bottomNav.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
-        bottomNav.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        bottomNav.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
-        bottomNav.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        dayNav.constrainTop(to: topNav.bottomAnchor, at: 1).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 36)
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: topNav.bottomAnchor, constant: 1).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: bottomNav.topAnchor, constant: -1).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0).isActive = true
+        day.constrainCenterY(to: dayNav.centerYAnchor).constrainLead(to: dayNav.leadingAnchor, at: 25)
+        
+        bottomNav.constrainBottom(to: self.view.bottomAnchor).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor).constrainHeight(to: 100)
+        
+        collectionView.constrainTop(to: dayNav.bottomAnchor, at: 1).constrainBottom(to: bottomNav.topAnchor, at: -1).constrainLead(to: self.view.leadingAnchor).constrainTrail(to: self.view.trailingAnchor)
     }
 }

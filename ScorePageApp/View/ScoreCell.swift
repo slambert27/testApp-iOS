@@ -15,6 +15,7 @@ class ScoreCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.constrainWidth(to: 30).constrainHeight(to: 30)
         return image
     }()
     
@@ -23,6 +24,7 @@ class ScoreCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.constrainWidth(to: 30).constrainHeight(to: 30)
         return image
     }()
     
@@ -30,11 +32,11 @@ class ScoreCell: UICollectionViewCell {
     var awayLabel = UILabelFactory(size: 30).compact().build()
     
     //live and final
-    var homeScoreLabel = UILabelFactory(size: 30).compact().build()
-    var awayScoreLabel = UILabelFactory(size: 30).compact().build()
+    var homeScoreLabel = UILabelFactory(size: 30).compact().align(.right).build()
+    var awayScoreLabel = UILabelFactory(size: 30).compact().align(.right).build()
     
     var liveChannelLabel = UILabelFactory(size: 12).bold().textColor(of: .red).build()
-    
+
     var clockLabel = UILabelFactory(size: 12).build()
     
     //upcoming
@@ -44,12 +46,8 @@ class ScoreCell: UICollectionViewCell {
     var favoriteLabel = UILabelFactory(size: 12).build()
     var overUnderLabel = UILabelFactory(size: 12).build()
     
-    var constrainer: Constraints?
-
     override init(frame: CGRect) {
         super.init(frame: frame)
-        constrainer = Constraints(contentView: contentView)
-        
         setupComponents()
     }
     
@@ -109,14 +107,11 @@ class ScoreCell: UICollectionViewCell {
         contentView.addSubview(homeLabel)
         contentView.addSubview(awayLabel)
         
-        constrainer!.constrainLogo(awayLogo)
-        constrainer!.constrainLogo(homeLogo)
+        awayLogo.constrainLead(to: contentView.leadingAnchor, at: 25).constrainTop(to: contentView.topAnchor, at: 45)
+        homeLogo.constrainLead(to: contentView.leadingAnchor, at: 25).constrainTop(to: awayLogo.bottomAnchor, at: 10)
         
-        awayLogo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40).isActive = true
-        homeLogo.topAnchor.constraint(equalTo: awayLogo.bottomAnchor, constant: 10).isActive = true
-        
-        constrainer!.constrainNameToLogo(constrain: awayLabel, to: awayLogo)
-        constrainer!.constrainNameToLogo(constrain: homeLabel, to: homeLogo)
+        awayLabel.constrainLead(to: awayLogo.trailingAnchor, at: 10).constrainCenterY(to: awayLogo.centerYAnchor).constrainWidth(to: 60)
+        homeLabel.constrainLead(to: homeLogo.trailingAnchor, at: 10).constrainCenterY(to: homeLogo.centerYAnchor).constrainWidth(to: 60)
     }
     
     func setupLiveComponents() {
@@ -125,11 +120,11 @@ class ScoreCell: UICollectionViewCell {
         contentView.addSubview(liveChannelLabel)
         contentView.addSubview(clockLabel)
         
-        constrainer!.constrainScoreToLogo(constrain: awayScoreLabel, to: awayLogo)
-        constrainer!.constrainScoreToLogo(constrain: homeScoreLabel, to: homeLogo)
-        
-        constrainer!.constrainStation(label: liveChannelLabel)
-        constrainer!.constrainClock(label: clockLabel)
+        awayScoreLabel.constrainTrail(to: contentView.trailingAnchor, at: -25).constrainCenterY(to: awayLogo.centerYAnchor)
+        homeScoreLabel.constrainTrail(to: contentView.trailingAnchor, at: -25).constrainCenterY(to: homeLogo.centerYAnchor)
+
+        liveChannelLabel.constrainTrail(to: contentView.trailingAnchor, at: -25).constrainBottom(to: contentView.bottomAnchor, at: -35)
+        clockLabel.constrainLead(to: contentView.leadingAnchor, at: 25).constrainBottom(to: contentView.bottomAnchor, at: -35)
     }
     
     func setupUpcomingComponents() {
@@ -138,10 +133,10 @@ class ScoreCell: UICollectionViewCell {
         contentView.addSubview(favoriteLabel)
         contentView.addSubview(overUnderLabel)
         
-        constrainer!.constrainTimeToAway(constrain: timeLabel, to: awayLogo)
-        constrainer!.constrainChannelToHome(constrain: channelLabel, to: homeLogo)
+        timeLabel.constrainBottom(to: awayLogo.bottomAnchor, at: 5).constrainTrail(to: contentView.trailingAnchor, at: -25)
+        channelLabel.constrainTop(to: homeLogo.topAnchor, at: -5).constrainTrail(to: contentView.trailingAnchor, at: -25)
         
-        constrainer!.constrainFavorite(label: favoriteLabel)
-        constrainer!.constrainOverUnder(label: overUnderLabel)
+        favoriteLabel.constrainLead(to: contentView.leadingAnchor, at: 25).constrainBottom(to: contentView.bottomAnchor, at: -35)
+        overUnderLabel.constrainTrail(to: contentView.trailingAnchor, at: -25).constrainBottom(to: contentView.bottomAnchor, at: -35)
     }
 }

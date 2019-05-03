@@ -19,7 +19,7 @@ struct UILabelFactory {
         self.size = CGFloat(size)
         label.textColor = .black
         label.text = ""
-        label.font = .systemFont(ofSize: self.size)
+        label.font = .systemFont(ofSize: self.size, weight: .light)
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -51,9 +51,13 @@ struct UILabelFactory {
         return self
     }
     
-    func header(text: String) -> UILabelFactory {
+    func text(_ text: String) -> UILabelFactory {
         label.text = text
-        label.backgroundColor = .white
+        return self
+    }
+    
+    func align(_ alignment: NSTextAlignment) -> UILabelFactory {
+        label.textAlignment = alignment
         return self
     }
 }
