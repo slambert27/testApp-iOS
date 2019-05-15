@@ -2,62 +2,53 @@
 //  EventPresenter.swift
 //  ScorePageApp
 //
-//  Created by Sam Lambert on 4/30/19.
+//  Created by Samuel Lambert on 5/15/19.
 //  Copyright © 2019 Sam Lambert. All rights reserved.
 //
 
 import UIKit
 
 struct EventPresenter {
+    
     let event: Event
     
-    var state: EventState {
-        return event.state
+    var header: String {
+        return event.awayTeam.abbreviation + " @ " + event.homeTeam.abbreviation
     }
     
-    var homeTeam: (UIImage, String) {
-        return (event.homeTeam.logo, event.homeTeam.abbreviation)
+    var homeLogo: UIImage {
+        return event.homeTeam.logo
     }
     
-    var awayTeam: (UIImage, String) {
-        return (event.awayTeam.logo, event.awayTeam.abbreviation)
+    var homeName: String {
+        return event.homeTeam.name.uppercased()
     }
     
-    var scores: (String, String) {
-        if let away = event.awayScore, let home = event.homeScore {
-            return (String(away), String(home))
+    var awayLogo: UIImage {
+        return event.awayTeam.logo
+    }
+    
+    var awayName: String {
+        return event.awayTeam.name.uppercased()
+    }
+    
+    var awayRecord: String {
+        let wins = String(event.awayTeam.wins)
+        let losses = String(event.awayTeam.losses)
+        if let draws = event.awayTeam.draws {
+            return wins + "-" + losses + "-" + String(draws)
         } else {
-            return ("", "")
+            return wins + "-" + losses
         }
     }
     
-    var clock: String {
-        let period = event.period ?? ""
-        let time = event.gameTime != nil ? " " + event.gameTime! : ""
-        return period + time
-    }
-    
-    var station: String {
-        return event.station ?? ""
-    }
-    
-    var time: String {
-        return event.startTime ?? ""
-    }
-    
-    var favorite: String {
-        if let fav = event.favorite?.abbreviation, let spread = event.spread {
-            return fav + " -" + String(spread)
+    var homeRecord: String {
+        let wins = String(event.homeTeam.wins)
+        let losses = String(event.homeTeam.losses)
+        if let draws = event.homeTeam.draws {
+            return wins + "-" + losses + "-" + String(draws)
         } else {
-            return ""
-        }
-    }
-    
-    var overUnder: String {
-        if let oU = event.overUnder {
-            return "O/U " + String(oU)
-        } else {
-            return ""
+            return wins + "-" + losses
         }
     }
 }

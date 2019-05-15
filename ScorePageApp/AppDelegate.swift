@@ -12,12 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let navController = UINavigationController(rootViewController: ScoresViewController())
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = ScoresViewController()
+        navController.isNavigationBarHidden = true
+        navController.interactivePopGestureRecognizer?.delegate = self
+        window!.rootViewController = navController
         window!.makeKeyAndVisible()
         
         return true
@@ -44,7 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
+extension AppDelegate: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if navController.viewControllers.count <= 1 {
+            return false
+        }
+        return true
+    }
+}

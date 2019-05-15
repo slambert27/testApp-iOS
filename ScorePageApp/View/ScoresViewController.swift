@@ -14,10 +14,15 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     var collectionView: UICollectionView!
     
+    var events = Constants.eventList
+    
     var topNav: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
+        let header = UILabelFactory(size: 40).compact().text("SCORES").build()
+        view.addSubview(header)
+        header.constrainBottom(to: view.bottomAnchor, at: -10).constrainLead(to: view.leadingAnchor, at: 25)
         return view
     }()
     
@@ -26,13 +31,13 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.accessibilityIdentifier = "dayNav"
+        var day = UILabelFactory(size: 12).text("Today").build()
+        view.addSubview(day)
+        day.constrainCenterY(to: view.centerYAnchor).constrainLead(to: view.leadingAnchor, at: 25)
         return view
     }()
     
     var bottomNav = NavBarView()
-    
-    var header = UILabelFactory(size: 40).compact().text("SCORES").build()
-    var day = UILabelFactory(size: 12).text("Today").build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +63,6 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         view.addSubview(dayNav)
         view.addSubview(bottomNav)
         
-        topNav.addSubview(header)
-        dayNav.addSubview(day)
-        
         setConstraints()
     }
 
@@ -70,9 +72,9 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if Constants.eventList.count.isMultiple(of: 2) {
-            return Constants.eventList.count
+            return events.count
         } else {
-            return Constants.eventList.count + 1
+            return events.count + 1
         }
     }
 
@@ -80,11 +82,19 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ScoreCell
         cell.backgroundColor = .white
         
-        if indexPath.row < Constants.eventList.count {
-            cell.injectData(event: Constants.eventList[indexPath.row])
+        if indexPath.row < events.count {
+            cell.injectData(presenter: CellPresenter(event: events[indexPath.row]))
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ScoreCell
+        if let event = cell.presenter?.event {
+            let eventController = EventViewController(with: EventPresenter(event: event))
+            navigationController?.pushViewController(eventController, animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -103,15 +113,8 @@ class ScoresViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     func setConstraints() {
         topNav.constrainTop(to: view.topAnchor).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor).constrainHeight(to: 100)
-        
-        header.constrainBottom(to: topNav.bottomAnchor, at: -10).constrainLead(to: topNav.leadingAnchor, at: 25)
-        
         dayNav.constrainTop(to: topNav.bottomAnchor, at: 1).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor).constrainHeight(to: 36)
-        
-        day.constrainCenterY(to: dayNav.centerYAnchor).constrainLead(to: dayNav.leadingAnchor, at: 25)
-        
         bottomNav.constrainBottom(to: view.bottomAnchor).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor)
-        
         collectionView.constrainTop(to: dayNav.bottomAnchor, at: 1).constrainBottom(to: bottomNav.topAnchor, at: -1).constrainLead(to: view.leadingAnchor).constrainTrail(to: view.trailingAnchor)
     }
 }

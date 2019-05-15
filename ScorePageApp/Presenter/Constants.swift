@@ -11,22 +11,22 @@ import UIKit
 class Constants {
     
     static let teams: [Team] = [
-        Team(location: "Boston", name: "Red Sox", abbreviation: "BOS", logo: UIImage(named: "redsox.png")!),
-        Team(location: "New York", name: "Yankees", abbreviation: "NYY", logo: UIImage(named: "yankees.png")!),
-        Team(location: "Cincinnati", name: "Reds", abbreviation: "CIN", logo: UIImage(named: "reds.png")!),
-        Team(location: "St. Louis", name: "Cardinals", abbreviation: "STL", logo: UIImage(named: "cardinals.png")!),
-        Team(location: "Chicago", name: "Bulls", abbreviation: "CHI", logo: UIImage(named: "bulls.png")!),
-        Team(location: "Miami", name: "Heat", abbreviation: "MIA", logo: UIImage(named: "heat.png")!),
-        Team(location: "Portland", name: "Trailblazers", abbreviation: "POR", logo: UIImage(named: "blazers")!),
-        Team(location: "Golden State", name: "Warriors", abbreviation: "GSW", logo: UIImage(named: "warriors")!),
-        Team(location: "Chicago", name: "Cubs", abbreviation: "CHI", logo: UIImage(named: "cubs.png")!),
-        Team(location: "Los Angeles", name: "Dodgers", abbreviation: "LAD", logo: UIImage(named: "dodgers.png")!),
-        Team(location: "Houston", name: "Astros", abbreviation: "HOU", logo: UIImage(named: "astros.png")!),
-        Team(location: "Kansas City", name: "Royals", abbreviation: "KC", logo: UIImage(named: "royals.png")!),
-        Team(location: "Los Angeles", name: "Angels", abbreviation: "LAA", logo: UIImage(named: "angels.png")!),
-        Team(location: "Oakland", name: "Raiders", abbreviation: "OAK", logo: UIImage(named: "athletics.png")!),
-        Team(location: "New York", name: "Knicks", abbreviation: "NYK", logo: UIImage(named: "knicks.png")!),
-        Team(location: "Indiana", name: "Pacers", abbreviation: "IND", logo: UIImage(named: "pacers.png")!)
+        Team(location: "Boston", name: "Red Sox", abbreviation: "BOS", logo: UIImage(named: "redsox.png")!, wins: 60, losses: 39),
+        Team(location: "New York", name: "Yankees", abbreviation: "NYY", logo: UIImage(named: "yankees.png")!, wins: 9, losses: 101),
+        Team(location: "Cincinnati", name: "Reds", abbreviation: "CIN", logo: UIImage(named: "reds.png")!, wins: 74, losses: 28),
+        Team(location: "St. Louis", name: "Cardinals", abbreviation: "STL", logo: UIImage(named: "cardinals.png")!, wins: 40, losses: 60),
+        Team(location: "Chicago", name: "Bulls", abbreviation: "CHI", logo: UIImage(named: "bulls.png")!, wins: 32, losses: 24),
+        Team(location: "Miami", name: "Heat", abbreviation: "MIA", logo: UIImage(named: "heat.png")!, wins: 11, losses: 45),
+        Team(location: "Portland", name: "Trailblazers", abbreviation: "POR", logo: UIImage(named: "blazers")!, wins: 30, losses: 25),
+        Team(location: "Golden State", name: "Warriors", abbreviation: "GSW", logo: UIImage(named: "warriors")!, wins: 20, losses: 35),
+        Team(location: "Chicago", name: "Cubs", abbreviation: "CHI", logo: UIImage(named: "cubs.png")!, wins: 65, losses: 34),
+        Team(location: "Los Angeles", name: "Dodgers", abbreviation: "LAD", logo: UIImage(named: "dodgers.png")!, wins: 57, losses: 42),
+        Team(location: "Houston", name: "Astros", abbreviation: "HOU", logo: UIImage(named: "astros.png")!, wins: 57, losses: 42),
+        Team(location: "Kansas City", name: "Royals", abbreviation: "KC", logo: UIImage(named: "royals.png")!, wins: 57, losses: 42),
+        Team(location: "Los Angeles", name: "Angels", abbreviation: "LAA", logo: UIImage(named: "angels.png")!, wins: 57, losses: 42),
+        Team(location: "Oakland", name: "Raiders", abbreviation: "OAK", logo: UIImage(named: "athletics.png")!, wins: 57, losses: 42),
+        Team(location: "New York", name: "Knicks", abbreviation: "NYK", logo: UIImage(named: "knicks.png")!, wins: 30, losses: 30),
+        Team(location: "Indiana", name: "Pacers", abbreviation: "IND", logo: UIImage(named: "pacers.png")!, wins: 30, losses: 30)
     ]
     
     static let eventList: [Event] = [

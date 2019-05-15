@@ -15,7 +15,7 @@
 		ACE0BDCA22792E840078C081 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDC922792E840078C081 /* Event.swift */; };
 		ACE0BDCC22792EB10078C081 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDCB22792EB10078C081 /* Team.swift */; };
 		ACE0BDCE227931B90078C081 /* BaseballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDCD227931B90078C081 /* BaseballEvent.swift */; };
-		ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD2227933020078C081 /* EventPresenter.swift */; };
+		ACE0BDD3227933020078C081 /* CellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD2227933020078C081 /* CellPresenter.swift */; };
 		ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD4227935300078C081 /* BasketballEvent.swift */; };
 		ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE0BDD622793AA40078C081 /* ScoresViewController.swift */; };
 		ACE0BDDD227A63420078C081 /* steelfish.extrabold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */; };
@@ -24,6 +24,9 @@
 		B17E9BFD227B33ED0004973D /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFC227B33ED0004973D /* NavBarView.swift */; };
 		B17E9BFF227B49E00004973D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17E9BFE227B49E00004973D /* UIExtensions.swift */; };
 		B1A974C8227CD94400C1F9D5 /* XCUIExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A974C7227CD94400C1F9D5 /* XCUIExtenstions.swift */; };
+		B1A974CC228C927900C1F9D5 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A974CB228C927900C1F9D5 /* EventViewController.swift */; };
+		B1A974CE228C9EA300C1F9D5 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A974CD228C9EA300C1F9D5 /* EventPresenter.swift */; };
+		B1A974D0228CA46900C1F9D5 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A974CF228CA46900C1F9D5 /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +61,7 @@
 		ACE0BDC922792E840078C081 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		ACE0BDCB22792EB10078C081 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		ACE0BDCD227931B90078C081 /* BaseballEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballEvent.swift; sourceTree = "<group>"; };
-		ACE0BDD2227933020078C081 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		ACE0BDD2227933020078C081 /* CellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPresenter.swift; sourceTree = "<group>"; };
 		ACE0BDD4227935300078C081 /* BasketballEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketballEvent.swift; sourceTree = "<group>"; };
 		ACE0BDD622793AA40078C081 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		ACE0BDDA227A61B10078C081 /* steelfish.extrabold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = steelfish.extrabold.ttf; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		B17E9BFC227B33ED0004973D /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		B17E9BFE227B49E00004973D /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		B1A974C7227CD94400C1F9D5 /* XCUIExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIExtenstions.swift; sourceTree = "<group>"; };
+		B1A974CB228C927900C1F9D5 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		B1A974CD228C9EA300C1F9D5 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		B1A974CF228CA46900C1F9D5 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				ACE0BDD622793AA40078C081 /* ScoresViewController.swift */,
+				B1A974CB228C927900C1F9D5 /* EventViewController.swift */,
+				B1A974CF228CA46900C1F9D5 /* EventDetailView.swift */,
 				B17E9BFC227B33ED0004973D /* NavBarView.swift */,
 				ACE0BDC722792E690078C081 /* ScoreCell.swift */,
 				B17E9BF62279F19F0004973D /* UILabelFactory.swift */,
@@ -174,7 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				B17E9BF8227A0EF70004973D /* Constants.swift */,
-				ACE0BDD2227933020078C081 /* EventPresenter.swift */,
+				ACE0BDD2227933020078C081 /* CellPresenter.swift */,
+				B1A974CD228C9EA300C1F9D5 /* EventPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -317,8 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACE0BDD3227933020078C081 /* EventPresenter.swift in Sources */,
+				ACE0BDD3227933020078C081 /* CellPresenter.swift in Sources */,
+				B1A974CE228C9EA300C1F9D5 /* EventPresenter.swift in Sources */,
 				ACE0BDCE227931B90078C081 /* BaseballEvent.swift in Sources */,
+				B1A974CC228C927900C1F9D5 /* EventViewController.swift in Sources */,
 				B17E9BFF227B49E00004973D /* UIExtensions.swift in Sources */,
 				ACE0BDCC22792EB10078C081 /* Team.swift in Sources */,
 				ACE0BDD5227935300078C081 /* BasketballEvent.swift in Sources */,
@@ -326,6 +337,7 @@
 				ACE0BDD722793AA40078C081 /* ScoresViewController.swift in Sources */,
 				B17E9BF9227A0EF70004973D /* Constants.swift in Sources */,
 				ACE0BDC822792E690078C081 /* ScoreCell.swift in Sources */,
+				B1A974D0228CA46900C1F9D5 /* EventDetailView.swift in Sources */,
 				ACE0BD9822792B960078C081 /* AppDelegate.swift in Sources */,
 				ACE0BDCA22792E840078C081 /* Event.swift in Sources */,
 				B17E9BF72279F19F0004973D /* UILabelFactory.swift in Sources */,

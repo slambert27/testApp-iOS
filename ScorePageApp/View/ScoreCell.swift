@@ -46,6 +46,12 @@ class ScoreCell: UICollectionViewCell {
     var favoriteLabel = UILabelFactory(size: 12).build()
     var overUnderLabel = UILabelFactory(size: 12).build()
     
+    var presenter: CellPresenter? {
+        didSet {
+            setData()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupComponents()
@@ -56,6 +62,7 @@ class ScoreCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        presenter = nil
         homeLogo.image = nil
         awayLogo.image = nil
         homeLabel.text = nil
@@ -70,36 +77,36 @@ class ScoreCell: UICollectionViewCell {
         overUnderLabel.text = nil
     }
     
-    func injectData(event: Event) {
-        let presenter = EventPresenter(event: event)
-        let homeTeam = presenter.homeTeam
-        homeLogo.image = homeTeam.0
-        homeLabel.text = homeTeam.1
+    func injectData(presenter: CellPresenter) {
+        self.presenter = presenter
+    }
+    
+    func setData() {
+        homeLogo.image = presenter?.homeLogo
+        homeLabel.text = presenter?.homeName
         
-        let awayTeam = presenter.awayTeam
-        awayLogo.image = awayTeam.0
-        awayLabel.text = awayTeam.1
+        awayLogo.image = presenter?.awayLogo
+        awayLabel.text = presenter?.awayName
         
-        if event.state == .upcoming {
+        if presenter?.state == .upcoming {
             
             setupUpcomingComponents()
-            timeLabel.text = presenter.time
-            channelLabel.text = presenter.station
+            timeLabel.text = presenter?.time
+            channelLabel.text = presenter?.station
             
-            favoriteLabel.text = presenter.favorite
-            overUnderLabel.text = presenter.overUnder
+            favoriteLabel.text = presenter?.favorite
+            overUnderLabel.text = presenter?.overUnder
             
             accessibilityIdentifier = "upcomingCell"
             
         } else { //live or final
             
             setupLiveComponents()
-            let scores = presenter.scores
-            awayScoreLabel.text = scores.0
-            homeScoreLabel.text = scores.1
+            awayScoreLabel.text = presenter?.awayScore
+            homeScoreLabel.text = presenter?.homeScore
             
-            clockLabel.text = presenter.clock
-            liveChannelLabel.text = presenter.station
+            clockLabel.text = presenter?.clock
+            liveChannelLabel.text = presenter?.station
             
             accessibilityIdentifier = "liveCell"
         }
